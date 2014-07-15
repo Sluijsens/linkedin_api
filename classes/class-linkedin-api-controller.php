@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Controller for LinkedIn API
+ * 
+ * @author Bryan Slop <bdslop@gmail.com>
+ */
 class LinkedIN_API_Controller {
 
 	private $_api_key;
@@ -107,7 +112,7 @@ class LinkedIN_API_Controller {
 				
 				// Put the token in a cookie
 //				setcookie( "linkedin_access_token", $result->access_token, time() + $result->expires_in - ( 60 * 60 * 24 * 10 ) );
-				setcookie( "linkedin_access_token", $result->access_token, time() + 300 );
+				setcookie( "linkedin_access_token", $result->access_token, time() + 30 );
 				$this->_access_token = $result->access_token;
 				
 				return $this->_access_token;

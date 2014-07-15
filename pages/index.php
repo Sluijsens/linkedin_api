@@ -38,7 +38,7 @@ if ( ! empty( $_SESSION['state'] ) && isset( $_GET['code'] ) && isset( $_GET['st
 }
 
 if ( $linkedin_api->hasAccessToken() ) {
-	$resource = '/v1/people/~:(email-address,first-name,last-name,picture-url,phone-numbers,main-address,headline,date-of-birth,location:(name,country:(code)),industry,summary,specialties,positions,educations,site-standard-profile-request,public-profile-url,interests,publications,languages,skills,certifications,courses,volunteer,honors-awards,last-modified-timestamp,recommendations-received)';
+	$resource = '/v1/people/~:(id,email-address,first-name,last-name,picture-url,phone-numbers,main-address,headline,date-of-birth,location:(name,country:(code)),industry,summary,specialties,positions,educations,site-standard-profile-request,public-profile-url,interests,publications,languages,skills,certifications,courses,volunteer,honors-awards,last-modified-timestamp,recommendations-received)';
 	$result = $linkedin_api->fetch( $resource );
 
 	$pdf = new FPDF_HTML();
