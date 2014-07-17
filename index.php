@@ -54,13 +54,13 @@ if( isset($_POST['testfile']) ) {
 }
 ?>
 	<form method='post'>
-		<input type='file' name='testfile' value='<?php echo "http://$_SERVER[HTTP_HOST]/pages/index.php"; ?>' />
+		<input type='file' name='testfile' />
 		<input type='submit' value='testen!' />
 	</form>
 <?php
 
 if ( $linkedin_api->hasAccessToken() ) {
-	$resource = '/v1/people/~:(id,email-address,first-name,last-name,picture-url,phone-numbers,main-address,headline,date-of-birth,location:(name,country:(code)),industry,summary,specialties,positions,educations,site-standard-profile-request,public-profile-url,interests,publications,languages,skills,certifications,courses,volunteer,honors-awards,last-modified-timestamp)';
+	$resource = '/v1/people/~:(id,email-address,first-name,last-name,picture-url,phone-numbers,main-address,headline,date-of-birth,location:(name,country:(code)),industry,summary,specialties,positions,educations,site-standard-profile-request,public-profile-url,interests,publications,languages,skills,certifications,courses,volunteer,honors-awards,last-modified-timestamp,recommendations-received)';
 	$result = $linkedin_api->fetch( $resource );
 	
 	echo "<pre>";
